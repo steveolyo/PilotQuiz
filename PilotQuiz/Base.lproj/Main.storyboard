@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PilotQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +16,64 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmA-qS-7bx">
+                                <rect key="frame" x="16" y="298" width="568" height="267"/>
+                                <color key="backgroundColor" red="0.88003923520000005" green="0.97783416320000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRT-Tp-oCO">
+                                <rect key="frame" x="16" y="34" width="568" height="30"/>
+                                <color key="backgroundColor" red="0.94537168559999996" green="0.75631675870000004" blue="0.70757572189999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Question">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="questionView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Is6-iU-9vs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjG-WX-5yt">
+                                <rect key="frame" x="16" y="260" width="568" height="30"/>
+                                <color key="backgroundColor" red="0.94537168559999996" green="0.75631675870000004" blue="0.70757572189999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Answer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NF6-Tf-JfE"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWC-7m-62B">
+                                <rect key="frame" x="16" y="72" width="568" height="128"/>
+                                <color key="backgroundColor" red="1" green="0.95263059911885151" blue="0.94850290797074366" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="o1L-JH-ZoM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.73981561136635365" green="1" blue="0.88794645153709562" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BmA-qS-7bx" firstAttribute="top" secondItem="pjG-WX-5yt" secondAttribute="bottom" constant="8" symbolic="YES" id="0hw-bG-rkc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BmA-qS-7bx" secondAttribute="bottom" constant="35" id="1Y8-Hn-iVj"/>
+                            <constraint firstItem="AWC-7m-62B" firstAttribute="trailing" secondItem="pjG-WX-5yt" secondAttribute="trailing" id="IC6-Bz-lD4"/>
+                            <constraint firstItem="pjG-WX-5yt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Jal-et-dge"/>
+                            <constraint firstItem="BmA-qS-7bx" firstAttribute="trailing" secondItem="pjG-WX-5yt" secondAttribute="trailing" id="QKZ-PW-Y4M"/>
+                            <constraint firstItem="AWC-7m-62B" firstAttribute="leading" secondItem="pjG-WX-5yt" secondAttribute="leading" id="WlN-6c-23x"/>
+                            <constraint firstItem="AWC-7m-62B" firstAttribute="leading" secondItem="uRT-Tp-oCO" secondAttribute="leading" id="YnM-ju-TQh"/>
+                            <constraint firstItem="pjG-WX-5yt" firstAttribute="top" secondItem="AWC-7m-62B" secondAttribute="bottom" constant="60" id="ffc-4Q-X0b"/>
+                            <constraint firstItem="AWC-7m-62B" firstAttribute="trailing" secondItem="uRT-Tp-oCO" secondAttribute="trailing" id="fw0-rd-9cy"/>
+                            <constraint firstItem="AWC-7m-62B" firstAttribute="top" secondItem="uRT-Tp-oCO" secondAttribute="bottom" constant="8" symbolic="YES" id="kd0-g5-Lcr"/>
+                            <constraint firstItem="uRT-Tp-oCO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="14" id="ojD-pQ-630"/>
+                            <constraint firstItem="BmA-qS-7bx" firstAttribute="leading" secondItem="pjG-WX-5yt" secondAttribute="leading" id="s1d-Kc-1UD"/>
+                            <constraint firstItem="pjG-WX-5yt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vUB-37-YAs"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answerText" destination="BmA-qS-7bx" id="n0W-0g-2xT"/>
+                        <outlet property="questionText" destination="AWC-7m-62B" id="WrG-kp-8cX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
